@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" lang="en">
+        <title>Visual Ticket Board</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <link type="text/css" href="/assets/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="/assets/vtb.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            <form id="<%= board._id %>" class="board border-purple-top">
+                <div class="header-board">
+                    <a id="back" href="/home" target="_top"><i class="fa fa-arrow-left" style="font-size:16px"></i></a>
+                    <input class="title-board" type="text" value="<%= board.title %>" name="board-title" placeholder="Board Title"/>
+                </div>
+                <% for(var i=0; i<board.sections.length; i++){ %>
+                  <div id="<%= board.sections[i]._id %>" class="section border-blue-top">
+                      <div class="header-section">
+                          <input class="title-section" type="text" value="<%= board.sections[i].title %>" name="section-title" placeholder="Section Title"/>
+                          <button class="close-section"><i class="fa fa-close" style="font-size:12px"></i></button>
+                      </div>
+                      <% var currentSection = board.sections[i];
+                        for(var j=0; j<currentSection.tickets.length; j++){ %>
+                      <div id="<%= currentSection.tickets[j]._id %>" class="ticket border-purple-top">
+                          <div class="header-ticket">
+                              <button class="close-ticket"><i class="fa fa-close" style="font-size:12px"></i></button>
+                          </div>
+                          <input class="ticket-title" type="text" placeholder="Title" name="ticket-title" value="<%= currentSection.tickets[j].title %>"/>
+                          <textarea class="ticket-description" wrap="hard" placeholder="Details" name="ticket-detail"><%= currentSection.tickets[j].details %></textarea>
+                      </div>
+                      <% } %>
+                      <button class="add-ticket">
+                        <i class="fa fa-plus" style="font-size:11px"></i>
+                      </button>
+                  </div>
+                <% } %>
+                <!-- <div class="section border-blue-top">
+                    <div class="header-section">
+                        <input class="title-section" type="text" value="New Section" name="section-title" />
+                        <button class="close-section"><i class="fa fa-close" style="font-size:12px"></i></button>
+                    </div>
+                    <div class="ticket border-purple-top">
+                        <div class="header-ticket">
+                            <button class="close-ticket"><i class="fa fa-close" style="font-size:12px"></i></button>
+                        </div>
+                        <input class="ticket-title" type="text" placeholder="Title" name="ticket-title" />
+                        <textarea class="ticket-description" wrap="hard" placeholder="Details" name="ticket-detail"></textarea>
+                    </div> -->
+                    <!-- <button id="add-ticket"><i class="fa fa-plus" style="font-size:11px"></i></button>
+                </div> -->
+                <button id="add-section"><i class="fa fa-plus" style="font-size:11px"></i></button>
+            </form>
+        </div>
+    </body>
+</html>

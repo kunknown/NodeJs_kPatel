@@ -1,0 +1,22 @@
+{
+  "name": "nodejs_kpatel",
+  "version": "1.0.0",
+  "description": "kPatel website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kaushal Patel",
+  "license": "ISC",
+  "dependencies": {
+    "angularfire": "^2.3.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "firebase": "^5.8.6",
+    "http-proxy": "^1.17.0",
+    "mongoose": "^5.4.11",
+    "nodemon": "^1.18.10",
+    "server": "^1.0.18"
+  }
+}
