@@ -1,5 +1,7 @@
 var express = require('express');
 var routeController = require('./controllers/routeController');
+var http = require('http');
+var httpProxy = require('http-proxy');
 
 var app = express();
 
@@ -9,11 +11,11 @@ app.set('view engine', 'ejs');
 //static files
 app.use(express.static('./public'));
 
-//fire controllers
+//fire controller
 routeController(app);
 
-
-app.listen(999, '0.0.0.0');
+//listen to port
+app.listen(80);
 
 //logs
 console.log('You are listening to port 999');

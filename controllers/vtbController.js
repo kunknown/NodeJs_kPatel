@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var ID = '';
 
 //conenct to the database
-mongoose.connect('MONGODB_URL', {useNewUrlParser: true});
+mongoose.connect('', {useNewUrlParser: true});
 
 //Create a Schemas
 var ticketSchema = new mongoose.Schema({

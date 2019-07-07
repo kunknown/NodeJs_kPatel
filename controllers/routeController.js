@@ -6,9 +6,6 @@ module.exports = function(app){
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: false}));
 
-  app.get('/angular/*', function(req, res){
-    res.render('index');
-  });
   app.get('/home', function(req, res){
     res.render('home');
   });
