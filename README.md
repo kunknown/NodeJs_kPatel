@@ -1,5 +1,5 @@
 # NodeJs_kPatel
-Personal website developed using Node.js & MongoDB
+A personal website developed using Node.js & MongoDB
 
 **Animated Landing Page**
 *Landing page has a rotating cube animation when viewed from PC.*
